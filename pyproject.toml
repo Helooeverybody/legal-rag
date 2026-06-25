@@ -1,0 +1,33 @@
+[project]
+name = "rag-luat"
+version = "0.1.0"
+description = "Retrieval-augmented generation pipeline for Vietnamese criminal-law verdict prediction (BLHS)."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "chromadb>=0.6.0",
+    "google-genai>=1.0.0",
+    "ipykernel>=7.2.0",
+    "openai>=2.30.0",
+    "pydantic>=2.12.5",
+    "python-dotenv>=1.2.2",
+    "requests>=2.33.1",
+    "scipy>=1.14.0",
+    "sentence-transformers>=3.0.0",
+]
+
+[project.scripts]
+rag-embed = "rag.core.embeddings:main"
+rag-law-retrieve = "rag.core.law_retriever:main"
+rag-generate-verdict = "rag.generation.verdict_from_eval:main"
+rag-evaluate-reasoning-act = "rag.evaluation.reasoning_act_eval:main"
+rag-evaluate-reasoning-one-call = "rag.evaluation.reasoning_one_call_eval:main"
+rag-evaluate-reasoning-past = "rag.evaluation.reasoning_past_eval:main"
+rag-recalculate-metrics = "rag.evaluation.recalculate_saved_metrics:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["rag*"]

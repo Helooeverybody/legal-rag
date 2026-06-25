@@ -1,0 +1,39 @@
+# Ignore JSON and Markdown files anywhere in the repository
+# (case data, vector-DB metadata, and scratch notes are not version-controlled)
+**/*.json
+**/*.md
+
+# ...but always keep project documentation under version control
+!README.md
+!**/README.md
+
+# Ignore environment files, but keep the template
+.env
+*.env
+!.env.example
+
+# Generated retrieval/vector DB artifacts
+output/chroma_db_*/
+output/generation_eval/*_db/
+output/**/chroma.sqlite3
+output/**/index_metadata.pickle
+output/**/data_level0.bin
+output/**/header.bin
+output/**/length.bin
+output/**/link_lists.bin
+
+save.md
+
+act_full.json.before_malformed_filter.bak
+analysis_act_full.txt
+act_full.json.bak
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# LaTeX, Text and CSV files
+*.tex
+*.txt
+*.csv
+.claude
