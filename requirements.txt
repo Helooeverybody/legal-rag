@@ -1,0 +1,15 @@
+# Runtime dependencies (install into your conda env with `pip install -r requirements.txt`).
+# Versions mirror pyproject.toml.
+
+chromadb>=0.6.0
+google-genai>=1.0.0
+ipykernel>=7.2.0
+openai>=2.30.0
+pydantic>=2.12.5
+python-dotenv>=1.2.2
+requests>=2.33.1
+scipy>=1.14.0
+sentence-transformers>=3.0.0
+
+# Testing (optional)
+pytest>=8.0.0

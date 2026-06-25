@@ -37,3 +37,6 @@ __pycache__/
 *.txt
 *.csv
 .claude
+
+# ...but keep the dependency manifest under version control
+!requirements.txt
