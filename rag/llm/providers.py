@@ -68,7 +68,7 @@ def _generate_with_aistudio(
     user_prompt: str,
     output_model: type[TModel],
 ) -> tuple[TModel, dict[str, Any]]:
-    # Mirror the pattern used in data_create/generate_synthetic_summary_aistudio.py
+    # Mirror the pattern used in scripts/generate_synthetic_summary_aistudio.py
     try:
         import google.genai as genai
         from google.genai import types
@@ -93,7 +93,7 @@ def _generate_with_aistudio(
 
     # Some google.genai client versions accept `request_options` while others do not.
     # Try calling with `request_options` first and fall back if the client raises
-    # a TypeError for unexpected kwargs (mirrors data_create/generate_synthetic_summary_aistudio.py).
+    # a TypeError for unexpected kwargs (mirrors scripts/generate_synthetic_summary_aistudio.py).
     try:
         response = _aistudio_client.models.generate_content(
             model=model_name,
